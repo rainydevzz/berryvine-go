@@ -6,7 +6,6 @@ import (
 	"berryvine/routes"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/swagger"
 	"github.com/gofiber/template/handlebars/v2"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -33,8 +32,6 @@ func main() {
 	})
 
 	app.Static("/files", "./files")
-
-	app.Get("/swagger/*", swagger.HandlerDefault)
 
 	routes.Root(app)
 	routes.Upload(app)
